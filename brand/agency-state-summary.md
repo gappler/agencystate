@@ -1,7 +1,7 @@
 # Agency State — Strategic Foundation
 
 **URL:** agencystate.ai
-**Tagline:** Amplify Everything.
+**Tagline:** AI for business and marketing
 
 ---
 
@@ -9,9 +9,11 @@
 
 **Name rationale:** "Agency" carries a double meaning — the agency world the founding team comes from, and agency as the ability to act independently. "State" is the condition you achieve. Agency State is the point where your team stops waiting on vendors, IT, and engineering and starts acting on its own.
 
-**Tone:** Professional, authoritative, cutting edge. The brand should demonstrate marketing taste and strategic awareness. Clean wordmark, no icons, modern sans-serif. Let the typography be the brand.
+**Visual identity:** Wordmark in Space Grotesk — "agency" bold (700), "state" regular (400), set as a single string. Monogram icon: rounded square with lowercase "a" (bold) and "s" (regular). The weight contrast is the identity. See `brand/agency-state-brand-guidelines.md` for full specifications.
 
-**Core metaphor:** Claude Code as a desktop partner — a multiplier of you. Not about building software. About amplifying what one person or one team can do. Efficiency, optimization, transformation, independence.
+**Tone:** Professional, authoritative, cutting edge. The brand should demonstrate marketing taste and strategic awareness.
+
+**Core metaphor:** Claude Code as a partner — a multiplier of you. Not about building software. About amplifying what one person or one team can do. Efficiency, optimization, transformation, independence.
 
 ---
 
@@ -144,7 +146,7 @@ Agency State is built by and for agency professionals — people who've spent ca
 2. **Apply for Claude Partner Network.**
 3. **Set up project folder in Claude Code** — load this document and research files, begin working in the tool daily.
 4. **Outline first cohort curriculum** — "Build Your Own MarTech," 4 weeks, marketing teams.
-5. **Name decision: Agency State.** Move on. Refine or rebrand later from a position of strength.
+5. **Brand finalized: Agency State.** Logo, guidelines, and tagline documented in `brand/agency-state-brand-guidelines.md`.
 
 ---
 

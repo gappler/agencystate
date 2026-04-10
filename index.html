@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency State — Scale yourself with AI</title>
+    <meta name="description" content="Agency State teaches teams to capture what they know and put AI to work with it — as a partner, not a tool.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FAF9F7;
+            --text: #1A1A1A;
+            --text-secondary: #5C5C5C;
+            --accent: #1A1A1A;
+            --accent-hover: #333333;
+            --border: #E0DFDC;
+            --card-bg: #FFFFFF;
+            --card-hover: #F5F4F2;
+            --font: 'Space Grotesk', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font);
+            font-weight: 400;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ---- Layout ---- */
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        /* ---- Nav ---- */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 249, 247, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-wordmark {
+            font-size: 1.125rem;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-wordmark .bold { font-weight: 700; }
+        .nav-wordmark .regular { font-weight: 400; }
+
+        nav a.nav-cta {
+            font-family: var(--font);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1.5px solid var(--text);
+            transition: opacity 0.2s ease;
+        }
+
+        nav a.nav-cta:hover {
+            opacity: 0.6;
+        }
+
+        /* ---- Hero ---- */
+
+        .hero {
+            padding: 11rem 0 6rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero .container {
+            width: 100%;
+        }
+
+        .hero-wordmark {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            letter-spacing: -0.035em;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-wordmark .bold { font-weight: 700; }
+        .hero-wordmark .regular { font-weight: 400; }
+
+        .hero-tagline {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 400;
+            color: var(--text-secondary);
+            letter-spacing: -0.01em;
+            margin-bottom: 3rem;
+        }
+
+        .hero-body {
+            font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+            line-height: 1.7;
+            max-width: 680px;
+            color: var(--text);
+        }
+
+        /* ---- Section headings ---- */
+
+        .section-label {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .section-heading {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-body {
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            color: var(--text);
+            max-width: 640px;
+        }
+
+        .section-body + .section-body {
+            margin-top: 1.25rem;
+        }
+
+        /* ---- Divider ---- */
+
+        .divider {
+            width: 48px;
+            height: 1.5px;
+            background: var(--border);
+            margin: 0;
+        }
+
+        /* ---- Problem ---- */
+
+        #problem .section-heading em {
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        /* ---- Methodology ---- */
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .method-item {
+            padding-top: 1.5rem;
+            border-top: 1.5px solid var(--text);
+        }
+
+        .method-number {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .method-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.75rem;
+        }
+
+        .method-desc {
+            font-size: 0.9375rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        .method-note {
+            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 640px;
+        }
+
+        .method-note strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* ---- Proof / Demos ---- */
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .demo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: background 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+
+        .demo-card:hover {
+            background: var(--card-hover);
+            border-color: #cccbc8;
+        }
+
+        .demo-card-top {
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-name {
+            font-size: 1.1875rem;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.375rem;
+        }
+
+        .demo-company {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .demo-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .demo-detail {
+            font-size: 0.875rem;
+            line-height: 1.55;
+            color: var(--text-secondary);
+        }
+
+        .demo-arrow {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            transition: transform 0.2s ease, color 0.2s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .demo-card:hover .demo-arrow {
+            transform: translate(3px, -3px);
+            color: var(--text);
+        }
+
+        .demo-note {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ---- Service ---- */
+
+        #service .section-body strong {
+            font-weight: 700;
+        }
+
+        .service-additional {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9375rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        /* ---- CTA ---- */
+
+        .cta-section {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .cta-heading {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-sub {
+            font-size: 1.0625rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.65;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: var(--font);
+            font-size: 0.9375rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+            background: var(--accent);
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            transition: background 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+        }
+
+        /* ---- Footer ---- */
+
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-left .wordmark {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .footer-left .wordmark .regular {
+            font-weight: 400;
+        }
+
+        .footer-right {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        /* ---- Animations ---- */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero .reveal {
+            transform: translateY(12px);
+        }
+
+        .stagger-1 { transition-delay: 0.05s; }
+        .stagger-2 { transition-delay: 0.15s; }
+        .stagger-3 { transition-delay: 0.25s; }
+
+        /* ---- Responsive ---- */
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 0;
+            }
+
+            .hero {
+                padding: 8rem 0 4rem;
+                min-height: auto;
+            }
+
+            .method-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .hero-wordmark {
+                font-size: 2.5rem;
+            }
+
+            nav .container {
+                height: 56px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-wordmark"><span class="bold">agency</span><span class="regular">state</span></a>
+            <a href="#contact" class="nav-cta">Get in touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-wordmark reveal stagger-1"><span class="bold">agency</span><span class="regular">state</span></h1>
+            <p class="hero-tagline reveal stagger-2">Scale yourself with AI.</p>
+            <p class="hero-body reveal stagger-3">The most valuable thing your team has is what it knows. The hardest thing to scale is what lives in people's heads. Agency State teaches teams to capture that context and put AI to work with it&thinsp;&mdash;&thinsp;as a partner, not a tool.</p>
+        </div>
+    </section>
+
+    <!-- The Problem -->
+    <section id="problem">
+        <div class="container">
+            <p class="section-label reveal">The problem</p>
+            <h2 class="section-heading reveal">This isn't a software problem.<br>It's a <em>context</em> problem.</h2>
+            <p class="section-body reveal">Every team has work that takes too long, requires too much context, and has never had a tool built for it. The knowledge and judgment your team relies on&thinsp;&mdash;&thinsp;brand voice, competitive instincts, institutional memory&thinsp;&mdash;&thinsp;has never had a reliable way to get captured, structured, and put to work.</p>
+            <p class="section-body reveal">AI changes that. But only if it has your context. Generic AI produces generic output. AI with your brand voice, your data, your audience definitions, your competitive landscape produces work your team can actually use.</p>
+        </div>
+    </section>
+
+    <!-- The Methodology -->
+    <section id="methodology">
+        <div class="container">
+            <p class="section-label reveal">The methodology</p>
+            <h2 class="section-heading reveal">Foundation first. Tools second.</h2>
+            <p class="section-body reveal">Every engagement follows the same system. The sequence matters&thinsp;&mdash;&thinsp;each layer feeds the next. Remove any layer and the output loses fidelity.</p>
+            <div class="method-grid">
+                <div class="method-item reveal">
+                    <p class="method-number">01</p>
+                    <h3 class="method-title">Capture the context</h3>
+                    <p class="method-desc">Pull what lives in people's heads into structured form&thinsp;&mdash;&thinsp;brand voice, audience segments, competitive landscape, product details. This is the foundation that makes everything downstream specific and useful.</p>
+                </div>
+                <div class="method-item reveal">
+                    <p class="method-number">02</p>
+                    <h3 class="method-title">Build sequentially</h3>
+                    <p class="method-desc">Each tool feeds the next. A brand configuration governs a content engine. Research produces a brief. The brief feeds the content. The sequence is the system.</p>
+                </div>
+                <div class="method-item reveal">
+                    <p class="method-number">03</p>
+                    <h3 class="method-title">Keep humans in the loop</h3>
+                    <p class="method-desc">AI produces drafts at every stage. Humans make decisions at every gate. The system makes these checkpoints visible and concrete, not implied.</p>
+                </div>
+            </div>
+            <p class="method-note reveal"><strong>Practical outputs, not dashboards.</strong> The value is the text file that feeds Salesforce, the CSV that imports to Smartsheet, the brief that feeds your content tools, the project plan in spreadsheet format. Tools that capture context and produce outputs your existing systems can actually use.</p>
+        </div>
+    </section>
+
+    <!-- The Proof -->
+    <section id="proof">
+        <div class="container">
+            <p class="section-label reveal">The proof</p>
+            <h2 class="section-heading reveal">Built entirely with AI.<br>See for yourself.</h2>
+            <p class="section-body reveal">Four demonstration suites, each showcasing a different business context and the foundation-first methodology. Every tool was built with Claude Code.</p>
+            <div class="demo-grid">
+                <a href="https://gappler.github.io/demo-marketing-operations/" target="_blank" rel="noopener" class="demo-card reveal">
+                    <div class="demo-card-top">
+                        <p class="demo-name">Marketing Operations</p>
+                        <p class="demo-company">Yowie&thinsp;&mdash;&thinsp;DTC outdoor gear</p>
+                    </div>
+                    <div class="demo-card-bottom">
+                        <p class="demo-detail">12 tools&thinsp;&mdash;&thinsp;brand definition, dashboards,<br>email sequences, campaign tools</p>
+                        <span class="demo-arrow">&nearr;</span>
+                    </div>
+                </a>
+                <a href="https://gappler.github.io/demo-strategic-planning/" target="_blank" rel="noopener" class="demo-card reveal">
+                    <div class="demo-card-top">
+                        <p class="demo-name">Strategic Planning</p>
+                        <p class="demo-company">Verdana&thinsp;&mdash;&thinsp;DTC wellness</p>
+                    </div>
+                    <div class="demo-card-bottom">
+                        <p class="demo-detail">5 tools&thinsp;&mdash;&thinsp;OKR planning, market sizing,<br>scenario modeling, positioning</p>
+                        <span class="demo-arrow">&nearr;</span>
+                    </div>
+                </a>
+                <a href="https://gappler.github.io/demo-agency-operations/" target="_blank" rel="noopener" class="demo-card reveal">
+                    <div class="demo-card-top">
+                        <p class="demo-name">Agency Operations</p>
+                        <p class="demo-company">Sidebar Creative&thinsp;&mdash;&thinsp;40-person agency</p>
+                    </div>
+                    <div class="demo-card-bottom">
+                        <p class="demo-detail">7 tools&thinsp;&mdash;&thinsp;project management,<br>client reporting, capacity planning</p>
+                        <span class="demo-arrow">&nearr;</span>
+                    </div>
+                </a>
+                <a href="https://gappler.github.io/demo-marketing-ecosystem/" target="_blank" rel="noopener" class="demo-card reveal">
+                    <div class="demo-card-top">
+                        <p class="demo-name">Marketing Ecosystem</p>
+                        <p class="demo-company">Yowie Expanded&thinsp;&mdash;&thinsp;full pipeline</p>
+                    </div>
+                    <div class="demo-card-bottom">
+                        <p class="demo-detail">4 tools + architecture&thinsp;&mdash;&thinsp;interconnected<br>pipeline with human decision gates</p>
+                        <span class="demo-arrow">&nearr;</span>
+                    </div>
+                </a>
+            </div>
+            <p class="demo-note reveal">Each demo includes a guided walkthrough, methodology documentation, and process logs generated automatically during the build.</p>
+        </div>
+    </section>
+
+    <!-- The Service -->
+    <section id="service">
+        <div class="container">
+            <p class="section-label reveal">The service</p>
+            <h2 class="section-heading reveal">Cohort-based intensives.</h2>
+            <p class="section-body reveal">Small groups learning the methodology together. Participants build tools that capture their team's context and produce outputs their existing systems can use&thinsp;&mdash;&thinsp;project plans, content matrices, structured briefs, importable files. Everyone leaves with working examples and the skills to keep building.</p>
+            <p class="section-body reveal">Participants arrive with prework completed and start building immediately. The intensive is structured around doing, not watching.</p>
+            <p class="service-additional reveal">Team implementation support and ongoing advisory are available for organizations that want the methodology applied directly to their operations.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2 class="cta-heading reveal">Start with a conversation.</h2>
+            <p class="cta-sub reveal">Tell us what your team is working on. We'll tell you what's possible.</p>
+            <a href="mailto:hello@agencystate.ai" class="cta-button reveal">hello@agencystate.ai</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-left"><span class="wordmark">agency<span class="regular">state</span></span>&ensp;&middot;&ensp;agencystate.ai</p>
+            <p class="footer-right">Built with Claude Code</p>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll state
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 16);
+        }, { passive: true });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        reveals.forEach(el => observer.observe(el));
+
+        // Trigger hero reveals immediately
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.hero .reveal').forEach(el => {
+                el.classList.add('visible');
+            });
+        });
+    </script>
+
+</body>
+</html>

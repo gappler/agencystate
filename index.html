@@ -95,12 +95,6 @@
             color: var(--text);
         }
 
-        .nav-wordmark .nav-mark {
-            height: 22px;
-            width: 22px;
-            display: block;
-        }
-
         .nav-wordmark .nav-type {
             height: 18px;
             width: auto;
@@ -137,20 +131,14 @@
             width: 100%;
         }
 
-        .hero-wordmark {
-            display: block;
-            width: 100%;
-            max-width: 880px;
-            height: auto;
-            margin-bottom: 2rem;
-        }
-
-        .hero-tagline {
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-            font-weight: 400;
-            color: var(--text-secondary);
-            letter-spacing: -0.01em;
-            margin-bottom: 3rem;
+        .hero-headline {
+            font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            max-width: 18ch;
+            margin: 0 0 2.5rem;
+            color: var(--text);
         }
 
         .hero-body {
@@ -506,16 +494,33 @@
         }
 
         .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             font-size: 0.875rem;
             color: var(--text-secondary);
         }
 
-        .footer-left .wordmark {
+        .footer-mark {
+            width: 56px;
+            height: 56px;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .footer-lockup {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            line-height: 1.2;
+        }
+
+        .footer-lockup .wordmark {
             font-weight: 700;
             color: var(--text);
         }
 
-        .footer-left .wordmark .regular {
+        .footer-lockup .wordmark .regular {
             font-weight: 400;
         }
 
@@ -580,10 +585,6 @@
                 padding: 0 1.25rem;
             }
 
-            .hero-wordmark {
-                max-width: 100%;
-            }
-
             nav .container {
                 height: 56px;
             }
@@ -596,7 +597,6 @@
     <nav>
         <div class="container">
             <a href="#" class="nav-wordmark" aria-label="Agency State">
-                <img src="assets/mark.svg" alt="" class="nav-mark">
                 <img src="assets/agency-state-wordmark.svg" alt="" class="nav-type">
             </a>
             <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="nav-cta">Book a call</a>
@@ -606,11 +606,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="reveal stagger-1" style="margin:0;">
-                <img src="assets/agency-state-wordmark.svg" alt="Agency State" class="hero-wordmark">
-            </h1>
-            <p class="hero-tagline reveal stagger-2">Learn Claude Code. Build real tools. Own the outcome.</p>
-            <p class="hero-body reveal stagger-3">Agency State teaches professionals how to partner with Claude Code and related tools&thinsp;&mdash;&thinsp;how to capture what your team knows and needs, and put it to work.</p>
+            <h1 class="hero-headline reveal stagger-1">Learn Claude Code. Build real tools. Own the outcome.</h1>
+            <p class="hero-body reveal stagger-3">Agency State teaches professionals how to capture collective knowledge and put AI to work with it. Thus &lsquo;agency&rsquo;&thinsp;: the ability to act on your own terms.</p>
             <p class="hero-body reveal stagger-4">For you, this could mean campaign strategy, content production, competitive intelligence, project planning, client reporting, or a website like this one&thinsp;&mdash;&thinsp;built from your brand, your data, and your instruction.</p>
         </div>
     </section>
@@ -619,9 +616,8 @@
     <section id="service">
         <div class="container">
             <p class="section-label reveal">What we do</p>
-            <h2 class="section-heading reveal">Cohort-based intensives.</h2>
-            <p class="section-body reveal">Small groups learning the methodology together. Participants build tools that capture their team's context and produce outputs their existing systems can use&thinsp;&mdash;&thinsp;project plans, content matrices, structured briefs, importable files. Everyone leaves with working examples and the skills to keep building.</p>
-            <p class="section-body reveal">Participants arrive with prework completed and start building immediately. The intensive is structured around doing, not watching.</p>
+            <h2 class="section-heading reveal">Cohort-based AI intensives.</h2>
+            <p class="section-body reveal">Small groups learning the methodology together. Participants build tools using a simulated company&thinsp;&mdash;&thinsp;dashboards, planners, content engines, reports&thinsp;&mdash;&thinsp;learning the system before applying it to their own work. Everyone leaves with working examples, practical outputs, and the skills to keep building.</p>
             <p class="section-body reveal"><strong>Who is this for?</strong> For professionals who have to get things done, are not afraid of tech, and know that mastering AI tools is essential for ongoing professional success.</p>
             <p class="service-additional reveal">Team implementation support and ongoing advisory are available for organizations that want the methodology applied directly to their operations.</p>
         </div>
@@ -632,7 +628,7 @@
         <div class="container">
             <p class="section-label reveal">How we do it</p>
             <h2 class="section-heading reveal">Foundations first.</h2>
-            <p class="section-body reveal">We start with a business context and build out from there.</p>
+            <p class="section-body reveal">We start with a business context and build from there.</p>
             <div class="method-grid">
                 <div class="method-item reveal">
                     <p class="method-number">01</p>
@@ -721,7 +717,7 @@
     <section class="cta-section" id="contact">
         <div class="container">
             <h2 class="cta-heading reveal">Founding cohorts forming now.</h2>
-            <p class="cta-sub reveal">Summer 2026. Online. Limited to 10 participants.</p>
+            <p class="cta-sub reveal">Next cohort starts June 8. Mondays at 10am ET. Four sessions. Limited to 10 participants.</p>
             <p class="cta-sub reveal">Book a 15-minute intro call to learn more and confirm fit.</p>
             <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="cta-button reveal">Book a call</a>
         </div>
@@ -730,7 +726,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-left"><span class="wordmark">agency<span class="regular">state</span></span>&ensp;&middot;&ensp;agencystate.ai</p>
+            <div class="footer-left">
+                <img src="assets/mark.svg" alt="Agency State" class="footer-mark">
+                <div class="footer-lockup">
+                    <span class="wordmark">agency<span class="regular">state</span></span>
+                    <span>agencystate.ai</span>
+                </div>
+            </div>
             <p class="footer-right">Built with Claude Code</p>
         </div>
     </footer>

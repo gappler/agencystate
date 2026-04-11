@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agency State — Scale yourself with AI</title>
-    <meta name="description" content="Agency State teaches teams to capture what they know and put AI to work with it — as a partner, not a tool.">
+    <title>Agency State — Learn Claude Code. Build real tools. Own the outcome.</title>
+    <meta name="description" content="Agency State teaches teams to partner with Claude Code — capturing what your team knows and needs, and putting it to work.">
+    <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -24,7 +25,8 @@
             --border: #E0DFDC;
             --card-bg: #FFFFFF;
             --card-hover: #F5F4F2;
-            --font: 'Space Grotesk', sans-serif;
+            --font: 'Inter', sans-serif;
+            --font-display: 'Inter', sans-serif;
         }
 
         html {
@@ -40,6 +42,11 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .section-heading, .method-title {
+            font-family: var(--font-display);
         }
 
         /* ---- Layout ---- */
@@ -81,14 +88,24 @@
         }
 
         .nav-wordmark {
-            font-size: 1.125rem;
-            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             text-decoration: none;
             color: var(--text);
         }
 
-        .nav-wordmark .bold { font-weight: 700; }
-        .nav-wordmark .regular { font-weight: 400; }
+        .nav-wordmark .nav-mark {
+            height: 22px;
+            width: 22px;
+            display: block;
+        }
+
+        .nav-wordmark .nav-type {
+            height: 18px;
+            width: auto;
+            display: block;
+        }
 
         nav a.nav-cta {
             font-family: var(--font);
@@ -121,14 +138,12 @@
         }
 
         .hero-wordmark {
-            font-size: clamp(3rem, 7vw, 5.5rem);
-            letter-spacing: -0.035em;
-            line-height: 1.05;
-            margin-bottom: 1.5rem;
+            display: block;
+            width: 100%;
+            max-width: 880px;
+            height: auto;
+            margin-bottom: 2rem;
         }
-
-        .hero-wordmark .bold { font-weight: 700; }
-        .hero-wordmark .regular { font-weight: 400; }
 
         .hero-tagline {
             font-size: clamp(1.25rem, 2.5vw, 1.75rem);
@@ -143,6 +158,10 @@
             line-height: 1.7;
             max-width: 680px;
             color: var(--text);
+        }
+
+        .hero-body + .hero-body {
+            margin-top: 1.25rem;
         }
 
         /* ---- Section headings ---- */
@@ -184,19 +203,12 @@
             margin: 0;
         }
 
-        /* ---- Problem ---- */
-
-        #problem .section-heading em {
-            font-style: normal;
-            font-weight: 400;
-        }
-
         /* ---- Methodology ---- */
 
         .method-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 3rem;
             margin-top: 3rem;
         }
 
@@ -251,21 +263,109 @@
         }
 
         .demo-card {
+            position: relative;
             background: var(--card-bg);
             border: 1px solid var(--border);
             padding: 2rem;
             text-decoration: none;
             color: var(--text);
-            transition: background 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 200px;
+            min-height: 220px;
+            overflow: hidden;
+        }
+
+        .demo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: currentColor;
+            opacity: 0.8;
         }
 
         .demo-card:hover {
-            background: var(--card-hover);
-            border-color: #cccbc8;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px -18px rgba(26, 26, 26, 0.28);
+        }
+
+        /* Yowie — outdoor gear, earth tones */
+        .demo-card--yowie {
+            background: #F2EADA;
+            border-color: #D9C9A6;
+            color: #5A3A1F;
+        }
+        .demo-card--yowie .demo-name {
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+        }
+        .demo-card--yowie .demo-company,
+        .demo-card--yowie .demo-detail,
+        .demo-card--yowie .demo-arrow {
+            color: #8A6A3E;
+        }
+
+        /* Verdana — wellness, clean greens */
+        .demo-card--verdana {
+            background: #EAF3E7;
+            border-color: #C8DFC0;
+            color: #2E5E3A;
+        }
+        .demo-card--verdana .demo-name {
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+        .demo-card--verdana .demo-company,
+        .demo-card--verdana .demo-detail,
+        .demo-card--verdana .demo-arrow {
+            color: #5C8867;
+        }
+
+        /* Sidebar Creative — dark, professional agency */
+        .demo-card--sidebar {
+            background: #2E333A;
+            border-color: #3F454D;
+            color: #EDEAE3;
+        }
+        .demo-card--sidebar .demo-name {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .demo-card--sidebar .demo-company,
+        .demo-card--sidebar .demo-detail,
+        .demo-card--sidebar .demo-arrow {
+            color: #A6ADB6;
+        }
+        .demo-card--sidebar::before {
+            background: #EDEAE3;
+            opacity: 0.85;
+        }
+
+        /* Yowie Expanded — ecosystem, interconnected */
+        .demo-card--ecosystem {
+            background: #E8EEF0;
+            border-color: #B8CCD2;
+            color: #1F4A56;
+            background-image:
+                radial-gradient(circle at 18% 22%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
+                radial-gradient(circle at 82% 30%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
+                radial-gradient(circle at 30% 78%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
+                radial-gradient(circle at 74% 82%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
+                linear-gradient(120deg, transparent 48%, rgba(31, 74, 86, 0.08) 49%, rgba(31, 74, 86, 0.08) 50%, transparent 51%);
+        }
+        .demo-card--ecosystem .demo-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            letter-spacing: -0.015em;
+        }
+        .demo-card--ecosystem .demo-company,
+        .demo-card--ecosystem .demo-detail,
+        .demo-card--ecosystem .demo-arrow {
+            color: #4E7A86;
         }
 
         .demo-card-top {
@@ -333,6 +433,22 @@
             color: var(--text-secondary);
         }
 
+        /* ---- Credibility ---- */
+
+        .credibility {
+            padding: 5rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .credibility-text {
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
         /* ---- CTA ---- */
 
         .cta-section {
@@ -350,11 +466,13 @@
         .cta-sub {
             font-size: 1.0625rem;
             color: var(--text-secondary);
-            margin-bottom: 2.5rem;
+            margin: 0 auto 0.5rem;
             max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
             line-height: 1.65;
+        }
+
+        .cta-sub + .cta-button {
+            margin-top: 1.75rem;
         }
 
         .cta-button {
@@ -427,6 +545,7 @@
         .stagger-1 { transition-delay: 0.05s; }
         .stagger-2 { transition-delay: 0.15s; }
         .stagger-3 { transition-delay: 0.25s; }
+        .stagger-4 { transition-delay: 0.35s; }
 
         /* ---- Responsive ---- */
 
@@ -462,7 +581,7 @@
             }
 
             .hero-wordmark {
-                font-size: 2.5rem;
+                max-width: 100%;
             }
 
             nav .container {
@@ -476,85 +595,77 @@
     <!-- Nav -->
     <nav>
         <div class="container">
-            <a href="#" class="nav-wordmark"><span class="bold">agency</span><span class="regular">state</span></a>
-            <a href="#contact" class="nav-cta">Get in touch</a>
+            <a href="#" class="nav-wordmark" aria-label="Agency State">
+                <img src="assets/mark.svg" alt="" class="nav-mark">
+                <img src="assets/agency-state-wordmark.svg" alt="" class="nav-type">
+            </a>
+            <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="nav-cta">Book a call</a>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-wordmark reveal stagger-1"><span class="bold">agency</span><span class="regular">state</span></h1>
-            <p class="hero-tagline reveal stagger-2">Scale yourself with AI.</p>
-            <p class="hero-body reveal stagger-3">The most valuable thing your team has is what it knows. The hardest thing to scale is what lives in people's heads. Agency State teaches teams to capture that context and put AI to work with it&thinsp;&mdash;&thinsp;as a partner, not a tool.</p>
+            <h1 class="reveal stagger-1" style="margin:0;">
+                <img src="assets/agency-state-wordmark.svg" alt="Agency State" class="hero-wordmark">
+            </h1>
+            <p class="hero-tagline reveal stagger-2">Learn Claude Code. Build real tools. Own the outcome.</p>
+            <p class="hero-body reveal stagger-3">Agency State teaches professionals how to partner with Claude Code and related tools&thinsp;&mdash;&thinsp;how to capture what your team knows and needs, and put it to work.</p>
+            <p class="hero-body reveal stagger-4">For you, this could mean campaign strategy, content production, competitive intelligence, project planning, client reporting, or a website like this one&thinsp;&mdash;&thinsp;built from your brand, your data, and your instruction.</p>
         </div>
     </section>
 
-    <!-- The Problem -->
-    <section id="problem">
+    <!-- The Service -->
+    <section id="service">
         <div class="container">
-            <p class="section-label reveal">The problem</p>
-            <h2 class="section-heading reveal">This isn't a software problem.<br>It's a <em>context</em> problem.</h2>
-            <p class="section-body reveal">Every team has work that takes too long, requires too much context, and has never had a tool built for it. The knowledge and judgment your team relies on&thinsp;&mdash;&thinsp;brand voice, competitive instincts, institutional memory&thinsp;&mdash;&thinsp;has never had a reliable way to get captured, structured, and put to work.</p>
-            <p class="section-body reveal">AI changes that. But only if it has your context. Generic AI produces generic output. AI with your brand voice, your data, your audience definitions, your competitive landscape produces work your team can actually use.</p>
+            <p class="section-label reveal">What we do</p>
+            <h2 class="section-heading reveal">Cohort-based intensives.</h2>
+            <p class="section-body reveal">Small groups learning the methodology together. Participants build tools that capture their team's context and produce outputs their existing systems can use&thinsp;&mdash;&thinsp;project plans, content matrices, structured briefs, importable files. Everyone leaves with working examples and the skills to keep building.</p>
+            <p class="section-body reveal">Participants arrive with prework completed and start building immediately. The intensive is structured around doing, not watching.</p>
+            <p class="section-body reveal"><strong>Who is this for?</strong> For professionals who have to get things done, are not afraid of tech, and know that mastering AI tools is essential for ongoing professional success.</p>
+            <p class="service-additional reveal">Team implementation support and ongoing advisory are available for organizations that want the methodology applied directly to their operations.</p>
         </div>
     </section>
 
     <!-- The Methodology -->
     <section id="methodology">
         <div class="container">
-            <p class="section-label reveal">The methodology</p>
-            <h2 class="section-heading reveal">Foundation first. Tools second.</h2>
-            <p class="section-body reveal">Every engagement follows the same system. The sequence matters&thinsp;&mdash;&thinsp;each layer feeds the next. Remove any layer and the output loses fidelity.</p>
+            <p class="section-label reveal">How we do it</p>
+            <h2 class="section-heading reveal">Foundations first.</h2>
+            <p class="section-body reveal">We start with a business context and build out from there.</p>
             <div class="method-grid">
                 <div class="method-item reveal">
                     <p class="method-number">01</p>
-                    <h3 class="method-title">Capture the context</h3>
-                    <p class="method-desc">Pull what lives in people's heads into structured form&thinsp;&mdash;&thinsp;brand voice, audience segments, competitive landscape, product details. This is the foundation that makes everything downstream specific and useful.</p>
+                    <h3 class="method-title">Define your business context</h3>
+                    <p class="method-desc">Build a complete business simulation&thinsp;&mdash;&thinsp;brand, audience, data, objectives. This is the foundation that makes everything downstream specific and useful.</p>
                 </div>
                 <div class="method-item reveal">
                     <p class="method-number">02</p>
-                    <h3 class="method-title">Build sequentially</h3>
-                    <p class="method-desc">Each tool feeds the next. A brand configuration governs a content engine. Research produces a brief. The brief feeds the content. The sequence is the system.</p>
+                    <h3 class="method-title">Build tools that inform decisions</h3>
+                    <p class="method-desc">Planning tools, scenario models, budget allocators&thinsp;&mdash;&thinsp;each one feeds the next. You learn to write prompts independently and build sequentially.</p>
                 </div>
                 <div class="method-item reveal">
                     <p class="method-number">03</p>
-                    <h3 class="method-title">Keep humans in the loop</h3>
-                    <p class="method-desc">AI produces drafts at every stage. Humans make decisions at every gate. The system makes these checkpoints visible and concrete, not implied.</p>
+                    <h3 class="method-title">Produce content and practical outputs</h3>
+                    <p class="method-desc">Content engines, reports, briefs, and files your existing systems can use. Plus a first look at connecting to live data.</p>
+                </div>
+                <div class="method-item reveal">
+                    <p class="method-number">04</p>
+                    <h3 class="method-title">Build for your team</h3>
+                    <p class="method-desc">Bring your own data. Build a tool that solves a real problem on your team. Present it to the group. Discuss.</p>
                 </div>
             </div>
-            <p class="method-note reveal"><strong>Practical outputs, not dashboards.</strong> The value is the text file that feeds Salesforce, the CSV that imports to Smartsheet, the brief that feeds your content tools, the project plan in spreadsheet format. Tools that capture context and produce outputs your existing systems can actually use.</p>
         </div>
     </section>
 
     <!-- The Proof -->
     <section id="proof">
         <div class="container">
-            <p class="section-label reveal">The proof</p>
-            <h2 class="section-heading reveal">Built entirely with AI.<br>See for yourself.</h2>
-            <p class="section-body reveal">Four demonstration suites, each showcasing a different business context and the foundation-first methodology. Every tool was built with Claude Code.</p>
+            <p class="section-label reveal">Demonstrations</p>
+            <h2 class="section-heading reveal">Built with Claude Code</h2>
+            <p class="section-body reveal">The companies are simulated. The methodology is what you'll learn&thinsp;&mdash;&thinsp;and it applies to your business.</p>
             <div class="demo-grid">
-                <a href="https://gappler.github.io/demo-marketing-operations/" target="_blank" rel="noopener" class="demo-card reveal">
-                    <div class="demo-card-top">
-                        <p class="demo-name">Marketing Operations</p>
-                        <p class="demo-company">Yowie&thinsp;&mdash;&thinsp;DTC outdoor gear</p>
-                    </div>
-                    <div class="demo-card-bottom">
-                        <p class="demo-detail">12 tools&thinsp;&mdash;&thinsp;brand definition, dashboards,<br>email sequences, campaign tools</p>
-                        <span class="demo-arrow">&nearr;</span>
-                    </div>
-                </a>
-                <a href="https://gappler.github.io/demo-strategic-planning/" target="_blank" rel="noopener" class="demo-card reveal">
-                    <div class="demo-card-top">
-                        <p class="demo-name">Strategic Planning</p>
-                        <p class="demo-company">Verdana&thinsp;&mdash;&thinsp;DTC wellness</p>
-                    </div>
-                    <div class="demo-card-bottom">
-                        <p class="demo-detail">5 tools&thinsp;&mdash;&thinsp;OKR planning, market sizing,<br>scenario modeling, positioning</p>
-                        <span class="demo-arrow">&nearr;</span>
-                    </div>
-                </a>
-                <a href="https://gappler.github.io/demo-agency-operations/" target="_blank" rel="noopener" class="demo-card reveal">
+                <a href="https://gappler.github.io/demo-agency-operations/" target="_blank" rel="noopener" class="demo-card demo-card--sidebar reveal">
                     <div class="demo-card-top">
                         <p class="demo-name">Agency Operations</p>
                         <p class="demo-company">Sidebar Creative&thinsp;&mdash;&thinsp;40-person agency</p>
@@ -564,7 +675,27 @@
                         <span class="demo-arrow">&nearr;</span>
                     </div>
                 </a>
-                <a href="https://gappler.github.io/demo-marketing-ecosystem/" target="_blank" rel="noopener" class="demo-card reveal">
+                <a href="https://gappler.github.io/demo-strategic-planning/" target="_blank" rel="noopener" class="demo-card demo-card--verdana reveal">
+                    <div class="demo-card-top">
+                        <p class="demo-name">Strategic Planning</p>
+                        <p class="demo-company">Verdana&thinsp;&mdash;&thinsp;DTC wellness</p>
+                    </div>
+                    <div class="demo-card-bottom">
+                        <p class="demo-detail">5 tools&thinsp;&mdash;&thinsp;OKR planning, market sizing,<br>scenario modeling, positioning</p>
+                        <span class="demo-arrow">&nearr;</span>
+                    </div>
+                </a>
+                <a href="https://gappler.github.io/demo-marketing-operations/" target="_blank" rel="noopener" class="demo-card demo-card--yowie reveal">
+                    <div class="demo-card-top">
+                        <p class="demo-name">Marketing Operations</p>
+                        <p class="demo-company">Yowie&thinsp;&mdash;&thinsp;DTC outdoor gear</p>
+                    </div>
+                    <div class="demo-card-bottom">
+                        <p class="demo-detail">12 tools&thinsp;&mdash;&thinsp;brand definition, dashboards,<br>email sequences, campaign tools</p>
+                        <span class="demo-arrow">&nearr;</span>
+                    </div>
+                </a>
+                <a href="https://gappler.github.io/demo-marketing-ecosystem/" target="_blank" rel="noopener" class="demo-card demo-card--ecosystem reveal">
                     <div class="demo-card-top">
                         <p class="demo-name">Marketing Ecosystem</p>
                         <p class="demo-company">Yowie Expanded&thinsp;&mdash;&thinsp;full pipeline</p>
@@ -579,23 +710,20 @@
         </div>
     </section>
 
-    <!-- The Service -->
-    <section id="service">
+    <!-- Credibility -->
+    <section class="credibility">
         <div class="container">
-            <p class="section-label reveal">The service</p>
-            <h2 class="section-heading reveal">Cohort-based intensives.</h2>
-            <p class="section-body reveal">Small groups learning the methodology together. Participants build tools that capture their team's context and produce outputs their existing systems can use&thinsp;&mdash;&thinsp;project plans, content matrices, structured briefs, importable files. Everyone leaves with working examples and the skills to keep building.</p>
-            <p class="section-body reveal">Participants arrive with prework completed and start building immediately. The intensive is structured around doing, not watching.</p>
-            <p class="service-additional reveal">Team implementation support and ongoing advisory are available for organizations that want the methodology applied directly to their operations.</p>
+            <p class="credibility-text reveal">Agency State is built by agency veterans&thinsp;&mdash;&thinsp;people who've spent careers building marketing and business systems for complex organizations. We teach what we practice.</p>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="container">
-            <h2 class="cta-heading reveal">Start with a conversation.</h2>
-            <p class="cta-sub reveal">Tell us what your team is working on. We'll tell you what's possible.</p>
-            <a href="mailto:hello@agencystate.ai" class="cta-button reveal">hello@agencystate.ai</a>
+            <h2 class="cta-heading reveal">Founding cohorts forming now.</h2>
+            <p class="cta-sub reveal">Summer 2026. Online. Limited to 10 participants.</p>
+            <p class="cta-sub reveal">Book a 15-minute intro call to learn more and confirm fit.</p>
+            <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="cta-button reveal">Book a call</a>
         </div>
     </section>
 

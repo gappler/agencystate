@@ -14,9 +14,9 @@ This repo holds the Agency State website, brand system, and strategic research.
 
 When writing copy or docs, follow `brand/agency-state-brand-guidelines.md`. Key points:
 
-- Brand name in running text is lowercase: **agencystate** (one word) — this is the wordmark convention and is intentional. Do not "correct" it to "agency-state" or "Agency State" except at sentence start or in formal headings.
+- Brand name in running text is two words, title case: **Agency State**. The one-word lowercase form **agencystate** is reserved for visual identity — the wordmark, logo lockups, and the domain. Don't use `agencystate` in prose, headlines, or body copy.
 - The repo directory is `agency-state` (kebab-case), but that's a filesystem convention, not a brand spelling. Don't propagate the hyphen into copy.
-- Domain is `agencystate.ai`. Calendly handle is `calendly.com/agencystate`.
+- Domain is `agencystate.ai`. Calendly handle is `calendly.com/agencystate`. These keep the one-word form because they're URLs.
 
 ## Document Conventions
 

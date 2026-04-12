@@ -164,7 +164,7 @@ Maintain clear space around the full logo equal to the height of the monogram ic
 ### Writing guidelines
 
 - Sentence case for all headings and body text (not Title Case)
-- Lowercase for brand name in running text: "agencystate" or "Agency State" at sentence start
+- Brand name in running text is two words, title case: **Agency State**. The one-word lowercase form **agencystate** is a visual-identity convention reserved for the wordmark, logo lockups, and the domain (`agencystate.ai` / `calendly.com/agencystate`). Don't use the one-word form in prose, headlines, or body copy.
 - Avoid buzzwords: "leverage," "synergy," "disrupt," "game-changer"
 - Avoid hedging: "we believe," "we think," "it's possible that"
 - Prefer active voice and short sentences

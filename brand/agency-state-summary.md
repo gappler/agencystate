@@ -9,7 +9,7 @@
 
 **Name rationale:** "Agency" carries a double meaning — the agency world the founding team comes from, and agency as the ability to act independently. "State" is the condition you achieve. AI allows your team to do things it couldn't do before — not through vendors, IT, or engineering, but directly. Agency State is that condition.
 
-**Visual identity:** Wordmark in Space Grotesk — "agency" bold (700), "state" regular (400), set as a single string. Monogram icon: rounded square with lowercase "a" (bold) and "s" (regular). The weight contrast is the identity. Final system pending designer refinement. See `brand/agency-state-brand-guidelines.md` for current specifications.
+**Visual identity:** Wordmark in Inter — "agency" bold (700), "state" regular (400), set as a single string. Monogram icon: rounded square with lowercase "a" (bold) and "s" (regular). The weight contrast is the identity. Final system pending designer refinement. See `brand/agency-state-brand-guidelines.md` for current specifications.
 
 **Tone:** Professional, authoritative, cutting edge. The brand should demonstrate marketing taste and strategic awareness.
 
@@ -180,7 +180,7 @@ The methodology is industry-agnostic. The demos signal breadth — Yowie speaks 
 1. **Apply for Claude Partner Network.** Free, provides credibility, Academy materials, potential co-marketing.
 2. **Build the Agency State website** using the four demos as proof points and the methodology as the core narrative.
 3. **Form LLC** (Delaware, in progress via CSC Global). File trademark for Agency State in classes 35, 41, 42 (USPTO search clear).
-4. **Finalize logo** — working prototype exists (Space Grotesk wordmark with monogram icon), needs professional refinement by designer to establish a simple, credible visual system.
+4. **Finalize logo** — working prototype exists (Inter wordmark with monogram icon), needs professional refinement by designer to establish a simple, credible visual system.
 5. **Outline first cohort/intensive curriculum** — based on the build sequences from the four demos.
 6. **Record a walkthrough video** — screen recording of building 2-3 tools from scratch with narration. First content marketing piece.
 

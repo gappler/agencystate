@@ -30,6 +30,10 @@ When writing copy or docs, follow `brand/agency-state-brand-guidelines.md`. Key 
 - Write commit messages that explain the *why*, not just the *what*.
 - Don't commit `.DS_Store` or other macOS cruft (already in `.gitignore`).
 
+## Typography
+
+- Never use Space Grotesk. Inter is the only font.
+
 ## Website Changes
 
 - `index.html` is hand-authored — no build step. Edit directly.

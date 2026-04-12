@@ -1,7 +1,7 @@
 # Agency State — Brand Guidelines
 
 **URL:** agencystate.ai
-**Tagline:** AI for business and marketing
+**Tagline:** Do more with AI. By yourself.
 
 ---
 
@@ -26,19 +26,20 @@ The primary logo combines three elements: the monogram icon, the wordmark, and t
 
 ### Tagline
 
-- "AI FOR BUSINESS AND MARKETING" in all caps, regular weight (400), letterspaced
+- "DO MORE WITH AI. BY YOURSELF." in all caps, regular weight (400), letterspaced
 - Sits below the wordmark, left-aligned with the wordmark start
 - Letter spacing: 3px at standard size
+- Use when the tagline adds context the surrounding copy doesn't already provide (e.g., logo lockups, social bios, slide decks). Omit on pages where the headline and body copy already do the positioning work.
 
 ---
 
 ## Typography
 
-### Primary typeface: Space Grotesk
+### Primary typeface: Inter
 
-- Source: Google Fonts — https://fonts.google.com/specimen/Space+Grotesk
+- Source: Google Fonts — https://fonts.google.com/specimen/Inter
 - License: Open Font License (free for all uses)
-- Why: geometric sans-serif with a technical edge, excellent weight range, distinctive without being decorative
+- Why: clean, highly legible sans-serif with excellent weight range, optimized for screens, professional without being decorative
 
 ### Weights used
 
@@ -67,7 +68,7 @@ All sizes are reference values at standard logo scale. Scale proportionally for 
 ### Fallback stack
 
 ```css
-font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+font-family: 'Inter', system-ui, -apple-system, sans-serif;
 ```
 
 ---
@@ -131,13 +132,13 @@ Maintain clear space around the full logo equal to the height of the monogram ic
 ```svg
 <svg width="100%" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-.logo-heavy { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 52px; fill: #1a1a1a; }
-.logo-light { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 52px; fill: #1a1a1a; }
-.logo-tag { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 14px; fill: #6b6b6b; letter-spacing: 3px; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+.logo-heavy { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 52px; fill: #1a1a1a; }
+.logo-light { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 52px; fill: #1a1a1a; }
+.logo-tag { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 14px; fill: #6b6b6b; letter-spacing: 3px; }
 .mark-bg { fill: #1a1a1a; }
-.mark-a { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px; fill: #ffffff; }
-.mark-s { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 24px; fill: #ffffff; }
+.mark-a { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 24px; fill: #ffffff; }
+.mark-s { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 24px; fill: #ffffff; }
 </style>
 <rect class="mark-bg" x="40" y="38" width="44" height="44" rx="8"/>
 <text class="mark-a" x="49" y="60" dominant-baseline="central">a</text>
@@ -145,7 +146,7 @@ Maintain clear space around the full logo equal to the height of the monogram ic
 <text y="75" x="100">
 <tspan class="logo-heavy">agency</tspan><tspan class="logo-light">state</tspan>
 </text>
-<text class="logo-tag" x="100" y="105">AI FOR BUSINESS AND MARKETING</text>
+<text class="logo-tag" x="100" y="105">DO MORE WITH AI. BY YOURSELF.</text>
 </svg>
 ```
 

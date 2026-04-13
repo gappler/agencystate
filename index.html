@@ -168,6 +168,38 @@
             margin-top: 1.25rem;
         }
 
+        .hero-meta {
+            margin-top: 2rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .hero-meta:hover {
+            color: var(--text);
+        }
+
+        .hero-meta strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .hero-meta .hero-meta-arrow {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .hero-meta:hover .hero-meta-arrow {
+            transform: translateY(2px);
+        }
+
         /* ---- Section headings ---- */
 
         .section-label {
@@ -529,6 +561,7 @@
             <h1 class="hero-headline reveal stagger-1">Learn Claude Code. Build real tools. Scale yourself.</h1>
             <p class="hero-body reveal stagger-3">Agency State teaches marketing and business innovators to build working tools with Claude Code. Strategic plans, dashboards, content engines, reports, even websites like this one&thinsp;&mdash;&thinsp;using your own brand, data, and strategy. No programming background required.</p>
             <p class="hero-body reveal stagger-4">That&rsquo;s agency. It&rsquo;s how leaders lead, building what they need, when they need it, instead of waiting on someone else.</p>
+            <a href="#contact" class="hero-meta reveal stagger-4"><strong>Next cohort: June 8</strong> &middot; Live online &middot; 10 seats <span class="hero-meta-arrow" aria-hidden="true">&darr;</span></a>
         </div>
     </section>
 
@@ -628,7 +661,7 @@
     <section class="cta-section" id="contact">
         <div class="container">
             <h2 class="cta-heading reveal">Founding cohorts forming now.</h2>
-            <p class="cta-sub reveal">Next cohort starts June 8. Mondays at 10am ET. Four sessions. Limited to 10 participants.</p>
+            <p class="cta-sub reveal">Next cohort starts June 8. Live online. Mondays at 10am ET. Four sessions. Limited to 10 participants.</p>
             <p class="cta-sub reveal">Book a 15-minute intro call to learn more and confirm fit.</p>
             <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="cta-button reveal" onclick="plausible('Book a call')">Book a call</a>
         </div>

@@ -268,7 +268,7 @@
 
         .demo-card {
             position: relative;
-            background: var(--card-bg);
+            background: #F1EFEA;
             border: 1px solid var(--border);
             padding: 2rem;
             text-decoration: none;
@@ -287,89 +287,19 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 3px;
             background: currentColor;
-            opacity: 0.8;
         }
+
+        .demo-card--sidebar::before { background: #A6A6A6; }
+        .demo-card--verdana::before { background: #5C8867; }
+        .demo-card--yowie::before { background: #C9A876; }
+        .demo-card--ecosystem::before { background: #4E7A86; }
 
         .demo-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 14px 32px -18px rgba(26, 26, 26, 0.28);
-        }
-
-        /* Yowie — outdoor gear, earth tones */
-        .demo-card--yowie {
-            background: #F2EADA;
-            border-color: #D9C9A6;
-            color: #5A3A1F;
-        }
-        .demo-card--yowie .demo-name {
-            font-family: var(--font-display);
-            letter-spacing: -0.02em;
-        }
-        .demo-card--yowie .demo-company,
-        .demo-card--yowie .demo-detail,
-        .demo-card--yowie .demo-arrow {
-            color: #8A6A3E;
-        }
-
-        /* Verdana — wellness, clean greens */
-        .demo-card--verdana {
-            background: #EAF3E7;
-            border-color: #C8DFC0;
-            color: #2E5E3A;
-        }
-        .demo-card--verdana .demo-name {
-            font-weight: 500;
-            letter-spacing: 0.01em;
-        }
-        .demo-card--verdana .demo-company,
-        .demo-card--verdana .demo-detail,
-        .demo-card--verdana .demo-arrow {
-            color: #5C8867;
-        }
-
-        /* Sidebar Creative — dark, professional agency */
-        .demo-card--sidebar {
-            background: #2E333A;
-            border-color: #3F454D;
-            color: #EDEAE3;
-        }
-        .demo-card--sidebar .demo-name {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        .demo-card--sidebar .demo-company,
-        .demo-card--sidebar .demo-detail,
-        .demo-card--sidebar .demo-arrow {
-            color: #A6ADB6;
-        }
-        .demo-card--sidebar::before {
-            background: #EDEAE3;
-            opacity: 0.85;
-        }
-
-        /* Yowie Expanded — ecosystem, interconnected */
-        .demo-card--ecosystem {
-            background: #E8EEF0;
-            border-color: #B8CCD2;
-            color: #1F4A56;
-            background-image:
-                radial-gradient(circle at 18% 22%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
-                radial-gradient(circle at 82% 30%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
-                radial-gradient(circle at 30% 78%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
-                radial-gradient(circle at 74% 82%, rgba(31, 74, 86, 0.12) 0 2px, transparent 3px),
-                linear-gradient(120deg, transparent 48%, rgba(31, 74, 86, 0.08) 49%, rgba(31, 74, 86, 0.08) 50%, transparent 51%);
-        }
-        .demo-card--ecosystem .demo-name {
-            font-family: var(--font-display);
-            font-weight: 700;
-            letter-spacing: -0.015em;
-        }
-        .demo-card--ecosystem .demo-company,
-        .demo-card--ecosystem .demo-detail,
-        .demo-card--ecosystem .demo-arrow {
-            color: #4E7A86;
+            border-color: #C9C7C2;
         }
 
         .demo-card-top {
@@ -651,8 +581,8 @@
             <div class="demo-grid">
                 <a href="https://gappler.github.io/demo-agency-operations/" target="_blank" rel="noopener" class="demo-card demo-card--sidebar reveal">
                     <div class="demo-card-top">
-                        <p class="demo-name">Agency Operations</p>
-                        <p class="demo-company">Sidebar Creative&thinsp;&mdash;&thinsp;40-person agency</p>
+                        <p class="demo-name">Sidebar Creative</p>
+                        <p class="demo-company">Agency Operations&thinsp;&mdash;&thinsp;40-person agency</p>
                     </div>
                     <div class="demo-card-bottom">
                         <p class="demo-detail">7 tools&thinsp;&mdash;&thinsp;project management,<br>client reporting, capacity planning</p>
@@ -661,8 +591,8 @@
                 </a>
                 <a href="https://gappler.github.io/demo-strategic-planning/" target="_blank" rel="noopener" class="demo-card demo-card--verdana reveal">
                     <div class="demo-card-top">
-                        <p class="demo-name">Strategic Planning</p>
-                        <p class="demo-company">Verdana&thinsp;&mdash;&thinsp;DTC wellness</p>
+                        <p class="demo-name">Verdana</p>
+                        <p class="demo-company">Strategic Planning&thinsp;&mdash;&thinsp;DTC wellness</p>
                     </div>
                     <div class="demo-card-bottom">
                         <p class="demo-detail">5 tools&thinsp;&mdash;&thinsp;OKR planning, market sizing,<br>scenario modeling, positioning</p>
@@ -671,8 +601,8 @@
                 </a>
                 <a href="https://gappler.github.io/demo-marketing-operations/" target="_blank" rel="noopener" class="demo-card demo-card--yowie reveal">
                     <div class="demo-card-top">
-                        <p class="demo-name">Marketing Operations</p>
-                        <p class="demo-company">Yowie&thinsp;&mdash;&thinsp;DTC outdoor gear</p>
+                        <p class="demo-name">Yowie</p>
+                        <p class="demo-company">Marketing Operations&thinsp;&mdash;&thinsp;DTC outdoor gear</p>
                     </div>
                     <div class="demo-card-bottom">
                         <p class="demo-detail">12 tools&thinsp;&mdash;&thinsp;brand definition, dashboards,<br>email sequences, campaign tools</p>
@@ -681,8 +611,8 @@
                 </a>
                 <a href="https://gappler.github.io/demo-marketing-ecosystem/" target="_blank" rel="noopener" class="demo-card demo-card--ecosystem reveal">
                     <div class="demo-card-top">
-                        <p class="demo-name">Marketing Ecosystem</p>
-                        <p class="demo-company">Yowie Expanded&thinsp;&mdash;&thinsp;full pipeline</p>
+                        <p class="demo-name">Yowie Expanded</p>
+                        <p class="demo-company">Marketing Ecosystem&thinsp;&mdash;&thinsp;full pipeline</p>
                     </div>
                     <div class="demo-card-bottom">
                         <p class="demo-detail">4 tools + architecture&thinsp;&mdash;&thinsp;interconnected<br>pipeline with human decision gates</p>

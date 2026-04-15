@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agency State — Learn Claude Code. Build real tools. Scale yourself.</title>
-    <meta name="description" content="Agency State teaches marketing and business innovators to build working tools with Claude Code — no programming background required.">
+    <meta name="description" content="Agency State teaches business and marketing innovators to build working tools with Claude Code — no programming background required.">
     <link rel="canonical" href="https://agencystate.ai">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://agencystate.ai">
     <meta property="og:title" content="Agency State — Learn Claude Code. Build real tools. Scale yourself.">
-    <meta property="og:description" content="Agency State teaches marketing and business innovators to build working tools with Claude Code — no programming background required.">
+    <meta property="og:description" content="Agency State teaches business and marketing innovators to build working tools with Claude Code — no programming background required.">
     <meta property="og:image" content="https://agencystate.ai/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Agency State — Learn Claude Code. Build real tools. Scale yourself.">
-    <meta name="twitter:description" content="Agency State teaches marketing and business innovators to build working tools with Claude Code — no programming background required.">
+    <meta name="twitter:description" content="Agency State teaches business and marketing innovators to build working tools with Claude Code — no programming background required.">
     <meta name="twitter:image" content="https://agencystate.ai/assets/og-image.png">
     <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
     <!-- Privacy-friendly analytics by Plausible -->
@@ -174,20 +174,20 @@
             font-weight: 600;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            color: var(--text-secondary);
+            color: #D4602A;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: color 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         .hero-meta:hover {
-            color: var(--text);
+            opacity: 0.8;
         }
 
         .hero-meta strong {
-            color: var(--text);
+            color: #D4602A;
             font-weight: 700;
         }
 
@@ -228,6 +228,17 @@
 
         .section-body + .section-body {
             margin-top: 1.25rem;
+        }
+
+        .about-email {
+            color: #D4602A;
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            transition: opacity 0.2s ease;
+        }
+
+        .about-email:hover {
+            opacity: 0.75;
         }
 
         /* ---- Divider ---- */
@@ -559,7 +570,7 @@
     <section class="hero">
         <div class="container">
             <h1 class="hero-headline reveal stagger-1">Learn Claude Code. Build real tools. Scale yourself.</h1>
-            <p class="hero-body reveal stagger-3">Agency State teaches marketing and business innovators to build working tools with Claude Code. Strategic plans, dashboards, content engines, reports, even websites like this one&thinsp;&mdash;&thinsp;using your own brand, data, and strategy. No programming background required.</p>
+            <p class="hero-body reveal stagger-3">Agency State teaches business and marketing innovators to build working tools with Claude Code. Strategic plans, dashboards, content engines, reports, even websites like this one&thinsp;&mdash;&thinsp;using your own brand, data, and strategy. No programming background required.</p>
             <p class="hero-body reveal stagger-4">That&rsquo;s agency. It&rsquo;s how leaders lead, building what they need, when they need it, instead of waiting on someone else.</p>
             <a href="#contact" class="hero-meta reveal stagger-4"><strong>Next cohort: June 8</strong> &middot; Live online &middot; 10 seats <span class="hero-meta-arrow" aria-hidden="true">&darr;</span></a>
         </div>
@@ -656,6 +667,30 @@
 
         </div>
     </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <p class="section-label reveal">About</p>
+            <h2 class="section-heading reveal">The real barrier isn&rsquo;t the technology.</h2>
+            <p class="section-body reveal">Greg Appler founded Agency State after two decades leading agency and brand-side marketing teams. He spent months sifting through AI tools before landing on Claude Code. The real barrier wasn&rsquo;t picking the tool&thinsp;&mdash;&thinsp;it was learning how to give AI the right business context. That&rsquo;s what Agency State teaches.</p>
+            <p class="section-body reveal">Questions? <a id="about-email" class="about-email" href="#">Email Greg</a>.</p>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            var u = 'greg';
+            var d = 'agencystate';
+            var t = 'ai';
+            var addr = u + String.fromCharCode(64) + d + '.' + t;
+            var link = document.getElementById('about-email');
+            if (link) {
+                link.href = 'mailto:' + addr;
+                link.textContent = addr;
+            }
+        })();
+    </script>
 
     <!-- CTA -->
     <section class="cta-section" id="contact">

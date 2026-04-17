@@ -1,1 +1,5 @@
 .DS_Store
+
+# Claude Code: keep shared skills in .claude/skills/ tracked,
+# ignore personal overrides
+.claude/settings.local.json

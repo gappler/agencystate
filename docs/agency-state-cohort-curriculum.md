@@ -41,7 +41,7 @@ Participants complete this independently using **regular Claude chat** (claude.a
 
 ## The Knowledge Base — A Through-Line
 
-A core thread runs through all four sessions: **the personal knowledge base.** This is the set of files in the participant's project that describe their business, voice, audience, and rules. Claude Code reads from it on every build.
+A core thread runs through all four sessions: **the knowledge base.** This is the set of files in the participant's project that describe their business, voice, audience, and rules. Claude Code reads from it on every build.
 
 - **Session 1:** You build the foundation. The prework brand definition becomes the seed of your knowledge base.
 - **Session 2:** You see the payoff — the tools you build are customized to your business *because* they read from your knowledge base.

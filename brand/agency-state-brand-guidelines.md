@@ -152,20 +152,6 @@ Maintain clear space around the full logo equal to the height of the monogram ic
 
 ---
 
-## Voice and tone
+## Voice, tone, and copy
 
-### Brand voice
-
-- **Professional** — speaks with authority earned from decades of agency experience
-- **Direct** — says what it means without jargon or hedge language
-- **Practical** — focused on outcomes and implementation, not theory
-- **Confident, not arrogant** — demonstrates capability rather than claiming it
-
-### Writing guidelines
-
-- Sentence case for all headings and body text (not Title Case)
-- Brand name in running text is two words, title case: **Agency State**. The one-word lowercase form **agencystate** is a visual-identity convention reserved for the wordmark, logo lockups, and the domain (`agencystate.ai` / `calendly.com/agencystate`). Don't use the one-word form in prose, headlines, or body copy.
-- Avoid buzzwords: "leverage," "synergy," "disrupt," "game-changer"
-- Avoid hedging: "we believe," "we think," "it's possible that"
-- Prefer active voice and short sentences
-- When discussing AI, be specific about tools and outcomes, not abstract about "the power of AI"
+See `agency-state-brand-book.md`. It's the single source of truth for voice, positioning, brand-name spelling, and what-to-say / what-not-to-say. This doc covers visual identity only.

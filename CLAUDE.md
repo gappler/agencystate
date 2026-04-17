@@ -5,18 +5,16 @@ This repo holds the Agency State website, brand system, and strategic research.
 ## Repo Layout
 
 - `index.html` — single-page marketing site (agencystate.ai)
-- `brand/` — brand guidelines, strategic summary, logo lockup
-- `assets/` — wordmark and mark files (`.ai`, `.svg`, `.png`)
-- `docs/` — pricing strategy, cohort curriculum, and other go-to-market docs
+- `brand/` — brand book (copy/voice/positioning tiebreaker) and brand guidelines (visual identity)
+- `assets/` — wordmark, mark, and og-image files (`.svg`, `.png`); Illustrator source files in `assets/illustrator files/`
+- `docs/` — pricing strategy, cohort curriculum, demos reference, and other go-to-market docs
 - `research/` — market analysis and audience research
 
-## Brand Voice & Wordmark
+## Brand
 
-When writing copy or docs, follow `brand/agency-state-brand-guidelines.md`. Key points:
+All brand decisions — voice, positioning, copy, what-to-say, what-not-to-say, brand-name spelling, fonts — are settled by `brand/agency-state-brand-book.md`. Read it before writing or editing any copy or brand-adjacent doc. Visual identity (logo, typography specs, color) lives in `brand/agency-state-brand-guidelines.md`.
 
-- Brand name in running text is two words, title case: **Agency State**. The one-word lowercase form **agencystate** is reserved for visual identity — the wordmark, logo lockups, and the domain. Don't use `agencystate` in prose, headlines, or body copy.
-- The repo directory is `agency-state` (kebab-case), but that's a filesystem convention, not a brand spelling. Don't propagate the hyphen into copy.
-- Domain is `agencystate.ai`. Calendly handle is `calendly.com/agencystate`. These keep the one-word form because they're URLs.
+Don't restate brand rules in other docs. If something needs to be a rule, add it to the brand book.
 
 ## Document Conventions
 
@@ -29,10 +27,6 @@ When writing copy or docs, follow `brand/agency-state-brand-guidelines.md`. Key 
 - Commit in focused, descriptive units. Don't let unrelated changes pile up in one commit.
 - Write commit messages that explain the *why*, not just the *what*.
 - Don't commit `.DS_Store` or other macOS cruft (already in `.gitignore`).
-
-## Typography
-
-- Never use Space Grotesk. Inter is the only font.
 
 ## Website Changes
 

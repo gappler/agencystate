@@ -153,7 +153,6 @@
             font-weight: 700;
             line-height: 1.05;
             letter-spacing: -0.03em;
-            max-width: 18ch;
             margin: 0 0 2.5rem;
             color: var(--text);
         }
@@ -536,6 +535,14 @@
                 min-height: auto;
             }
 
+            .hero-headline {
+                max-width: 18ch;
+            }
+
+            .desktop-break {
+                display: none;
+            }
+
             .method-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -578,7 +585,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-headline reveal stagger-1">Claude Code for business and marketing.</h1>
+            <h1 class="hero-headline reveal stagger-1">Claude Code for business <br class="desktop-break">and marketing.</h1>
             <p class="hero-body reveal stagger-3">Produce the strategic, operational, and deliverable outputs your work demands&thinsp;&mdash;&thinsp;using your own brand and audience. Strategic plans, dashboards, content engines, reports, even websites like this one. No programming background&nbsp;required.</p>
             <p class="hero-body reveal stagger-4">That&rsquo;s agency.</p>
             <a href="#contact" class="hero-meta reveal stagger-4"><strong>Next cohort: June 8</strong> &middot; Live online &middot; 10 seats <span class="hero-meta-arrow" aria-hidden="true">&darr;</span></a>

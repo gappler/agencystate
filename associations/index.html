@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude for Associations 101 — Agency State</title>
+    <meta name="description" content="Claude for Associations 101 — a four-session Agency State cohort for association marketing teams. Build Claude-powered AI workflows your association owns — renewal campaigns, conference marketing, chapter toolkits. June 8, $500.">
+    <link rel="canonical" href="https://agencystate.ai/associations/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agencystate.ai/associations/">
+    <meta property="og:title" content="Claude for Associations 101 — Agency State">
+    <meta property="og:description" content="Claude for Associations 101 — a four-session Agency State cohort for association marketing teams. Build Claude-powered AI workflows your association owns. June 8, $500.">
+    <meta property="og:image" content="https://agencystate.ai/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude for Associations 101 — Agency State">
+    <meta name="twitter:description" content="Claude for Associations 101 — a four-session Agency State cohort for association marketing teams. June 8, $500.">
+    <meta name="twitter:image" content="https://agencystate.ai/assets/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/agency-state-mark-orange.svg">
+    <link rel="apple-touch-icon" href="../assets/agency-state-mark-orange.svg">
+    <script async src="https://plausible.io/js/pa-vw1RCpq_0eKsUpTuUVVSi.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #FAF9F7;
+            --card-bg: #FFFFFF;
+            --card-hover: #F5F4F2;
+            --text: #1A1A1A;
+            --text-secondary: #5C5C5C;
+            --accent: #D4602A;
+            --accent-hover: #B8521F;
+            --border: #E0DFDC;
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: 1.0625rem;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ---- Layout ---- */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---- Typography utilities ---- */
+
+        .micro {
+            font-family: var(--font);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .micro-muted {
+            font-family: var(--font);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .prose {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: 1.125rem;
+            line-height: 1.65;
+            color: var(--text);
+            max-width: 60ch;
+        }
+
+        .prose + .prose { margin-top: 1rem; }
+
+        /* ---- Nav ---- */
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 50;
+            background: rgba(250, 249, 247, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        nav.scrolled { border-bottom-color: var(--border); }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 2rem;
+        }
+
+        .nav-wordmark {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-wordmark .nav-type {
+            height: auto;
+            width: 160px;
+            display: block;
+        }
+
+        .nav-cta {
+            font-family: var(--font);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1.5px solid var(--accent);
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-cta:hover { opacity: 0.65; }
+
+        /* ---- Hero ---- */
+
+        .hero {
+            padding: 7.5rem 0 4rem;
+            min-height: calc(75vh - 64px);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: end;
+            width: 100%;
+        }
+
+        @media (min-width: 920px) {
+            .hero-grid {
+                grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr);
+                gap: 5rem;
+            }
+        }
+
+        .hero-label { margin-bottom: 1.5rem; }
+
+        .hero-headline {
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6.5vw, 4.75rem);
+            line-height: 1.02;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.75rem;
+            color: var(--text);
+        }
+
+        .hero-headline em {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--accent);
+            background-image: linear-gradient(var(--accent), var(--accent));
+            background-repeat: no-repeat;
+            background-size: 0% 0.08em;
+            background-position: 0 100%;
+            padding-bottom: 0.1em;
+        }
+
+        @keyframes draw-underline {
+            from { background-size: 0% 0.08em; }
+            to   { background-size: 100% 0.08em; }
+        }
+
+        .hero-headline.visible em {
+            animation: draw-underline 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+        }
+
+        .hero-body {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+            line-height: 1.6;
+            max-width: 560px;
+            color: var(--text);
+        }
+
+        /* ---- Offer card ---- */
+
+        .offer-card {
+            background: var(--card-bg);
+            padding: 1.75rem;
+            position: relative;
+            border: 1px solid var(--border);
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px;
+            width: 16px; height: 16px;
+            border-top: 2px solid var(--accent);
+            border-left: 2px solid var(--accent);
+        }
+
+        .offer-card::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; right: -1px;
+            width: 16px; height: 16px;
+            border-bottom: 2px solid var(--accent);
+            border-right: 2px solid var(--accent);
+        }
+
+        .offer-card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .offer-card-meta {
+            font-family: var(--font);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .offer-date {
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: 1.875rem;
+            line-height: 1;
+            letter-spacing: -0.025em;
+            color: var(--text);
+        }
+
+        .offer-details {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 1.5rem;
+            row-gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-details dt {
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: 0.6875rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            align-self: center;
+        }
+
+        .offer-details dd {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: 0.9375rem;
+            color: var(--text);
+        }
+
+        .offer-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.95rem 1.15rem;
+            background: var(--accent);
+            color: #FFFFFF;
+            font-family: var(--font);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .offer-cta:hover { background: var(--accent-hover); }
+
+        .offer-cta:hover .arrow { transform: translateX(3px); }
+
+        .arrow {
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            display: inline-block;
+            font-weight: 400;
+        }
+
+        /* ---- Section rhythm ---- */
+
+        .section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+            position: relative;
+        }
+
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-heading {
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: clamp(1.75rem, 3.25vw, 2.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.028em;
+            color: var(--text);
+        }
+
+        .section-heading em {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* ---- Curriculum ---- */
+
+        .sessions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 700px) {
+            .sessions { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
+        }
+
+        @media (min-width: 1300px) {
+            .sessions { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        }
+
+        .session {
+            border-top: 1.5px solid var(--text);
+            padding-top: 1.25rem;
+            position: relative;
+        }
+
+        .session-number {
+            font-family: var(--font);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .session-title {
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .session-desc {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .take-with-you {
+            margin-top: 2rem;
+            padding: 1.75rem 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            max-width: 720px;
+        }
+
+        .take-with-you-label {
+            font-family: var(--font);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.65rem;
+        }
+
+        .take-with-you-text {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        /* ---- Instructor ---- */
+
+        /* ---- Book (final CTA + instructor) ---- */
+
+        .book {
+            padding: 5rem 0 6.5rem;
+            border-top: 1px solid var(--border);
+            position: relative;
+        }
+
+
+        .book-label { margin-bottom: 1.25rem; }
+
+        .book-headline {
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: clamp(2rem, 4.25vw, 3rem);
+            line-height: 1.02;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 3rem;
+        }
+
+        .book-headline em {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .book-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media (min-width: 820px) {
+            .book-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .book-inner .micro { margin-bottom: 0.9rem; }
+
+        .book-meta {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 1.5rem;
+            row-gap: 0.75rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .book-meta dt {
+            font-family: var(--font);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            align-self: center;
+        }
+
+        .book-meta dd {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .book-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 2rem;
+            background: var(--accent);
+            color: #FFFFFF;
+            font-family: var(--font);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .book-cta:hover { background: var(--accent-hover); }
+
+        .book-cta:hover .arrow { transform: translateX(4px); }
+
+        /* ---- Footer ---- */
+
+        footer {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-wordmark-img {
+            height: auto;
+            width: 130px;
+            display: block;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.35rem;
+            font-family: var(--font);
+            font-size: 0.8125rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+            text-align: right;
+        }
+
+        .footer-right p { margin: 0; }
+
+        .footer-signature {
+            font-size: 0.9375rem;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-meta { font-size: 0.75rem; opacity: 0.75; }
+
+        /* ---- Reveal animations ---- */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .d1 { transition-delay: 0.05s; }
+        .d2 { transition-delay: 0.15s; }
+        .d3 { transition-delay: 0.25s; }
+        .d4 { transition-delay: 0.38s; }
+        .d5 { transition-delay: 0.5s; }
+
+        /* ---- Responsive ---- */
+
+        @media (max-width: 600px) {
+            .container { padding: 0 1.25rem; }
+            .hero { padding: 7rem 0 3.5rem; min-height: auto; }
+            .section, .book { padding: 4rem 0; }
+            .book { padding-bottom: 6rem; }
+            nav .container { height: 56px; }
+            .nav-wordmark .nav-type { width: 130px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-wordmark" aria-label="Agency State">
+                <img src="../assets/wordmark-black-on-white.svg" alt="Agency State" class="nav-type">
+            </a>
+            <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="nav-cta" onclick="plausible('Book a call')">Book a call</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div>
+                        <p class="micro hero-label reveal d1">Cohort 01 &mdash; Claude for Associations 101</p>
+                        <h1 class="hero-headline reveal d2">Your association<br>marketing team<br>deserves <em>better.</em></h1>
+                        <p class="hero-body reveal d3">Agency State teaches association marketing teams how to build, own, and run AI workflows with Claude and Claude Code. The tools are new. The problems aren&rsquo;t. Your data, your brand&rsquo;s voice, your process &mdash; on your desktop.</p>
+                    </div>
+
+                    <aside class="offer-card reveal d4">
+                        <div class="offer-card-head">
+                            <span class="offer-card-meta">Next cohort</span>
+                            <span class="offer-date">June 8</span>
+                        </div>
+                        <dl class="offer-details">
+                            <dt>Format</dt>
+                            <dd>Live online</dd>
+                            <dt>Schedule</dt>
+                            <dd>Mon + Tue, 2 weeks</dd>
+                            <dt>Sessions</dt>
+                            <dd>4 &middot; 10am ET</dd>
+                            <dt>Seats</dt>
+                            <dd>10</dd>
+                            <dt>Price</dt>
+                            <dd>$500</dd>
+                        </dl>
+                        <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="offer-cta" onclick="plausible('Book a call')">
+                            <span>Book a call</span>
+                            <span class="arrow">&rarr;</span>
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI YOU OWN -->
+        <section class="section" aria-labelledby="alternative-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-heading reveal" id="alternative-heading">This is <em>AI you own.</em></h2>
+                </div>
+                <p class="prose reveal">Your CRM may already have AI. But you can&rsquo;t take it outside the platform or apply it to problems the vendor didn&rsquo;t anticipate.</p>
+                <p class="prose reveal d1">Claude and Claude Code are different. A Claude project configured with your brand guidelines, your audience data, and your workflow logic is not a feature inside someone else&rsquo;s software. It&rsquo;s your system. You can see every prompt, change it, and push the output back into your stack.</p>
+            </div>
+        </section>
+
+        <!-- CURRICULUM -->
+        <section class="section" id="curriculum" aria-labelledby="curriculum-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-heading reveal" id="curriculum-heading">Four sessions. <em>Four builds.</em></h2>
+                </div>
+                <div class="sessions">
+                    <article class="session reveal">
+                        <p class="session-number">Session 01</p>
+                        <h3 class="session-title">Your knowledge base</h3>
+                        <p class="session-desc">Build a Claude knowledge base using simulated data &mdash; a generic association or one modeled on yours. Learn the method before applying it to live work.</p>
+                    </article>
+                    <article class="session reveal d1">
+                        <p class="session-number">Session 02</p>
+                        <h3 class="session-title">The work that repeats</h3>
+                        <p class="session-desc">Pick your most time-eating recurring work. Build a Claude-powered workflow for it. Renewal. Conference. Chapter. Committee.</p>
+                    </article>
+                    <article class="session reveal d2">
+                        <p class="session-number">Session 03</p>
+                        <h3 class="session-title">Content in your voice</h3>
+                        <p class="session-desc">Teach Claude your association&rsquo;s voice, audiences, and rules. Build on-brand member emails, newsletters, speaker outreach &mdash; not generic AI.</p>
+                    </article>
+                    <article class="session reveal d3">
+                        <p class="session-number">Session 04</p>
+                        <h3 class="session-title">Demo day</h3>
+                        <p class="session-desc">Present the workflows and outputs you built for your actual work. Peer feedback. You leave capable of doing this alone.</p>
+                    </article>
+                </div>
+                <aside class="take-with-you reveal d1">
+                    <p class="take-with-you-label">What you take with you</p>
+                    <p class="take-with-you-text">Your association&rsquo;s knowledge base. Claude-powered workflows for your recurring work &mdash; yours to run, extend, and share internally. The method to keep building as your needs change. No subscription. No vendor lock.</p>
+                </aside>
+            </div>
+        </section>
+
+        <!-- BOOK (with instructor) -->
+        <section class="book" id="contact">
+            <div class="container">
+                <h2 class="book-headline reveal">Cohort 01 <em>forming now.</em></h2>
+                <div class="book-inner">
+                    <div>
+                        <p class="prose reveal d1">The instructor, Greg Appler, ran marketing at The American Institute of Architects from 2014 to 2023, where he built the team and led its technology transformation. Conference marketing, membership, chapter support, sponsor programs. Before AIA, two decades across agency and brand-side marketing at Y&amp;R, Designory, and Grafik on brands including Lincoln, Nissan/Infiniti, and Bacardi Global Brands.</p>
+                    </div>
+                    <div>
+                        <dl class="book-meta reveal d1">
+                            <dt>Start</dt>
+                            <dd>June 8, 2026</dd>
+                            <dt>Format</dt>
+                            <dd>Live online &middot; Mon + Tue &middot; 10am ET</dd>
+                            <dt>Size</dt>
+                            <dd>10 seats</dd>
+                            <dt>Price</dt>
+                            <dd>$500</dd>
+                        </dl>
+                        <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="book-cta reveal d2" onclick="plausible('Book a call')">
+                            <span>Book a call</span>
+                            <span class="arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="/" aria-label="Agency State">
+                <img src="../assets/wordmark-black-on-white.svg" alt="Agency State" class="footer-wordmark-img">
+            </a>
+            <div class="footer-right">
+                <p class="footer-signature">&copy; 2026 Agency State, LLC. All rights reserved.</p>
+                <p class="footer-meta">Built with Claude Code</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 16);
+        }, { passive: true });
+
+        const reveals = document.querySelectorAll('.reveal, .section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+        reveals.forEach(el => observer.observe(el));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.hero .reveal').forEach(el => {
+                el.classList.add('visible');
+            });
+        });
+    </script>
+
+</body>
+</html>

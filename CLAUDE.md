@@ -4,6 +4,10 @@ This is the **public** repo for the Agency State marketing site (agencystate.ai)
 
 Internal content lives in two private companion repos: curriculum, pricing, research, and strategy in [`agency-state-curriculum`](https://github.com/gappler/agency-state-curriculum), and brand + outbound comms in [`agency-state-publishing`](https://github.com/gappler/agency-state-publishing). If you need to read or edit brand rules, session designs, pricing strategy, or internal research, work in the appropriate private repo — not this one.
 
+## Current state (April 2026)
+
+The site is on a holding page. Cohort 1 of the Annual Planning Cohort is being prepared for the week of July 13, 2026. The previous cohort page work is preserved on the `cohort-v1-paused` branch in the agency-state repo.
+
 ## Repo Layout
 
 - `index.html` — single-page marketing site
@@ -13,6 +17,10 @@ Internal content lives in two private companion repos: curriculum, pricing, rese
 ## Brand
 
 Brand decisions are settled by the brand book in `agency-state-publishing/brand/agency-state-brand-book.md`. Read it before writing or editing any copy on this site. Do not restate brand rules here.
+
+## Strategy
+
+Strategic decisions — audience, offer, format, pricing — are settled by `agency-state-curriculum/strategy/agency-state-brief-v2.md`. Read it before editing site copy related to the cohort offer.
 
 ## Document Conventions
 

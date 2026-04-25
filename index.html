@@ -342,13 +342,6 @@
 
         .offer-tile:hover .arrow { transform: translateX(3px); }
 
-        .offer-tile-cta--email {
-            text-transform: none;
-            letter-spacing: 0;
-            font-size: 0.9375rem;
-            font-weight: 400;
-        }
-
         /* ---- About ---- */
 
         .about {
@@ -603,21 +596,12 @@
             });
         });
 
-        // Email obfuscation — assemble address at runtime for consulting and about
+        // Email obfuscation — assemble address at runtime
         (function () {
             var u = 'greg';
             var d = 'agencystate';
             var t = 'ai';
             var addr = u + String.fromCharCode(64) + d + '.' + t;
-
-            // Consulting tile CTA
-            var consulting = document.getElementById('consulting-email');
-            var consultingText = document.getElementById('consulting-email-text');
-            if (consulting && consultingText) {
-                consulting.href = 'mailto:' + addr + '?subject=Agency%20State%20consulting';
-                consultingText.textContent = addr;
-                consulting.classList.add('offer-tile-cta--email');
-            }
 
             // About section contact
             var about = document.getElementById('about-email');

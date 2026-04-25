@@ -145,10 +145,7 @@
         /* ---- Hero ---- */
 
         .hero {
-            padding: 7.5rem 0 4rem;
-            min-height: calc(75vh - 64px);
-            display: flex;
-            align-items: center;
+            padding: 7.5rem 0 2.5rem;
             position: relative;
         }
 
@@ -156,14 +153,21 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 3rem;
-            align-items: end;
+            align-items: start;
             width: 100%;
+            justify-items: start;
+        }
+
+        .hero-grid > div:first-child {
+            margin-left: 0;
+            padding-left: 0;
+            min-width: 0;
         }
 
         @media (min-width: 920px) {
             .hero-grid {
                 grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr);
-                gap: 5rem;
+                gap: 3rem;
             }
         }
 
@@ -215,6 +219,7 @@
             padding: 1.75rem;
             position: relative;
             border: 1px solid var(--border);
+            margin-top: 2.75rem;
         }
 
         .offer-card::before {
@@ -236,30 +241,26 @@
         }
 
         .offer-card-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
             margin-bottom: 1.25rem;
             padding-bottom: 1.25rem;
             border-bottom: 1px solid var(--border);
         }
 
-        .offer-card-meta {
+        .offer-card-title {
             font-family: var(--font);
-            font-size: 0.6875rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
+            font-size: 1.25rem;
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+            color: var(--text);
+            margin-bottom: 0.5rem;
         }
 
-        .offer-date {
+        .offer-card-date {
             font-family: var(--font);
-            font-weight: 700;
-            font-size: 1.875rem;
-            line-height: 1;
-            letter-spacing: -0.025em;
-            color: var(--text);
+            font-weight: 300;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
         }
 
         .offer-details {
@@ -316,7 +317,7 @@
         /* ---- Section rhythm ---- */
 
         .section {
-            padding: 4rem 0;
+            padding: 3rem 0 4rem;
             border-top: 1px solid var(--border);
             position: relative;
         }
@@ -507,6 +508,24 @@
 
         .book-cta:hover .arrow { transform: translateX(4px); }
 
+        .book-email {
+            font-family: var(--font);
+            font-weight: 300;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            margin-top: 1.25rem;
+        }
+
+        .book-email a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: opacity 0.2s ease;
+        }
+
+        .book-email a:hover { opacity: 0.65; }
+
         /* ---- Footer ---- */
 
         footer {
@@ -587,7 +606,6 @@
             <a href="/" class="nav-wordmark" aria-label="Agency State">
                 <img src="../assets/wordmark-black-on-white.svg" alt="Agency State" class="nav-type">
             </a>
-            <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="nav-cta" onclick="plausible('Book a call: nav')">Book a call</a>
         </div>
     </nav>
 
@@ -598,15 +616,15 @@
             <div class="container">
                 <div class="hero-grid">
                     <div>
-                        <p class="micro hero-label reveal d1">Cohort 01 &mdash; Claude for Associations 101</p>
-                        <h1 class="hero-headline reveal d2">Your association<br>marketing team<br>deserves <em>better.</em></h1>
-                        <p class="hero-body reveal d3">Agency State teaches association marketing teams how to build, own, and run AI workflows with Claude and Claude Code. The tools are new. The problems aren&rsquo;t. Your data, your brand&rsquo;s voice, your process &mdash; on your desktop.</p>
+                        <p class="micro hero-label reveal d1">Claude for Associations 101 &mdash; Starts June 8</p>
+                        <h1 class="hero-headline reveal d2">Own the work.<br>Build <em>agency.</em></h1>
+                        <p class="hero-body reveal d3">A four-session live cohort for association marketing teams. Build a Claude-powered workflow for the recurring work &mdash; a knowledge base of your brand and data, content in your voice, the method to keep building.</p>
                     </div>
 
                     <aside class="offer-card reveal d4">
                         <div class="offer-card-head">
-                            <span class="offer-card-meta">Next cohort</span>
-                            <span class="offer-date">June 8</span>
+                            <h2 class="offer-card-title">Claude for Associations 101</h2>
+                            <p class="offer-card-date">Starts June 8, 2026</p>
                         </div>
                         <dl class="offer-details">
                             <dt>Format</dt>
@@ -620,23 +638,12 @@
                             <dt>Price</dt>
                             <dd>$500</dd>
                         </dl>
-                        <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="offer-cta" onclick="plausible('Book a call: hero')">
-                            <span>Book a call</span>
+                        <a href="https://buy.stripe.com/4gMbJ0bCs1BcbDfaZ22Nq00" target="_blank" rel="noopener" class="offer-cta" onclick="plausible('Register: hero')">
+                            <span>Register</span>
                             <span class="arrow">&rarr;</span>
                         </a>
                     </aside>
                 </div>
-            </div>
-        </section>
-
-        <!-- AI YOU OWN -->
-        <section class="section" aria-labelledby="alternative-heading">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-heading reveal" id="alternative-heading">This is <em>AI you own.</em></h2>
-                </div>
-                <p class="prose reveal">Your CRM may already have AI. But you can&rsquo;t take it outside the platform or apply it to problems the vendor didn&rsquo;t anticipate.</p>
-                <p class="prose reveal d1">Claude and Claude Code are different. A Claude project configured with your brand guidelines, your audience data, and your workflow logic is not a feature inside someone else&rsquo;s software. It&rsquo;s your system. You can see every prompt, change it, and push the output back into your stack.</p>
             </div>
         </section>
 
@@ -668,36 +675,24 @@
                         <p class="session-desc">Present the workflows and outputs you built for your actual work. Peer feedback. You leave capable of doing this alone.</p>
                     </article>
                 </div>
-                <aside class="take-with-you reveal d1">
-                    <p class="take-with-you-label">What you take with you</p>
-                    <p class="take-with-you-text">Your association&rsquo;s knowledge base. Claude-powered workflows for your recurring work &mdash; yours to run, extend, and share internally. The method to keep building as your needs change. No subscription. No vendor lock.</p>
-                </aside>
             </div>
         </section>
 
         <!-- BOOK (with instructor) -->
         <section class="book" id="contact">
             <div class="container">
-                <h2 class="book-headline reveal">Cohort 01 <em>forming now.</em></h2>
+                <p class="micro book-label reveal">June 8 cohort</p>
+                <h2 class="book-headline reveal">Now <em>forming.</em></h2>
                 <div class="book-inner">
                     <div>
-                        <p class="prose reveal d1">The instructor, Greg Appler, ran marketing at The American Institute of Architects from 2014 to 2023, where he built the team and led its technology transformation. Conference marketing, membership, chapter support, sponsor programs. Before AIA, two decades across agency and brand-side marketing at Y&amp;R, Designory, and Grafik on brands including Lincoln, Nissan/Infiniti, and Bacardi Global Brands.</p>
+                        <p class="prose reveal d1">I led marketing at The American Institute of Architects from 2014 to 2023, where I built the team and led its technology transformation. Before AIA, I spent two decades agency and brand-side at Y&amp;R, Designory, and Grafik, on brands including Lincoln, Nissan/Infiniti, and Bacardi Global Brands.</p>
                     </div>
                     <div>
-                        <dl class="book-meta reveal d1">
-                            <dt>Start</dt>
-                            <dd>June 8, 2026</dd>
-                            <dt>Format</dt>
-                            <dd>Live online &middot; Mon + Tue &middot; 10am ET</dd>
-                            <dt>Size</dt>
-                            <dd>10 seats</dd>
-                            <dt>Price</dt>
-                            <dd>$500</dd>
-                        </dl>
-                        <a href="https://calendly.com/agencystate" target="_blank" rel="noopener" class="book-cta reveal d2" onclick="plausible('Book a call: final')">
-                            <span>Book a call</span>
+                        <a href="https://buy.stripe.com/4gMbJ0bCs1BcbDfaZ22Nq00" target="_blank" rel="noopener" class="book-cta reveal d1" onclick="plausible('Register: final')">
+                            <span>Register</span>
                             <span class="arrow">&rarr;</span>
                         </a>
+                        <p class="book-email reveal d2">Questions? Email <a href="#" id="book-email">greg@agencystate.ai</a>.</p>
                     </div>
                 </div>
             </div>
@@ -740,6 +735,20 @@
                 el.classList.add('visible');
             });
         });
+
+        // Email obfuscation — assemble address at runtime
+        (function () {
+            var u = 'greg';
+            var d = 'agencystate';
+            var t = 'ai';
+            var addr = u + String.fromCharCode(64) + d + '.' + t;
+
+            var email = document.getElementById('book-email');
+            if (email) {
+                email.href = 'mailto:' + addr + '?subject=Agency%20State%20cohort%20question';
+                email.textContent = addr;
+            }
+        })();
     </script>
 
 </body>

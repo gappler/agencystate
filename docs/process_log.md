@@ -10,6 +10,39 @@ Append entries at the top. Each entry: date, what changed, why, and any notable 
 
 ---
 
+## 2026-04-27 — OG image: tagline removed; wordmark-only treatment
+
+**What changed**
+
+- `assets/og-image.png` — replaced. New render is wordmark-only on the cream `#FAF9F7` background; no tagline. Same 1200×630 dimensions. The old image's tagline line ("Claude Code for business and marketing.") was carried over from the previous Claude-Code-training positioning that the v1.x brand book replaced — off-brand for the current senior-marketing-leader positioning.
+- `assets/og-templates/main.html` — `<div class="tagline">` element removed. `.tagline` CSS rule deleted. `body { gap: 36px }` and `flex-direction: column` removed (no longer needed with a single child); body keeps `display: flex; align-items: center; justify-content: center` to keep the wordmark centered. Other OG templates in `assets/og-templates/` (sidebar, verdana, yowie, yowie-expanded) are not affected — they're for the demo-suite OG cards, not the main site OG, and were not touched in this pass.
+
+**Why**
+
+The brand guidelines (v2.5) flag the official tagline ("Do more with AI on your own terms.") as written for an earlier broad-marketing-professionals positioning and queue a tagline-revisit decision. The homepage shipped on 2026-04-27 with no tagline above the bio, deferring that revisit. The OG image was still rendering an even older tagline from before the brand book's current direction, so it was actively misrepresenting the brand. Removing the tagline from the OG matches the homepage's no-tagline decision and avoids extending the older tagline into a new artifact.
+
+This is explicitly a "remove for now" decision, not a "wordmark-only is the permanent OG treatment" decision. When the broader tagline-revisit decision lands (per the brand guidelines pending updates), the OG should be re-evaluated.
+
+**Render workflow used (for future reference)**
+
+The PNG was rendered from the HTML template via headless Chrome:
+
+```
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless=new --disable-gpu --no-sandbox --hide-scrollbars \
+  --window-size=1200,630 --virtual-time-budget=10000 \
+  --screenshot=assets/og-image.png \
+  "file://$(pwd)/assets/og-templates/main.html"
+```
+
+The `--virtual-time-budget=10000` lets Chrome wait for the Google Fonts Inter import to finish before screenshotting. Chrome rejects non-`.png` output extensions, so render straight to the final filename or a `.png` temp.
+
+**Cache busting note**
+
+Social platforms (LinkedIn, Twitter, Facebook) cache OG images per URL. The new image won't propagate to existing social shares automatically. If a fresh share is needed before caches expire, force-refresh via LinkedIn Post Inspector / Twitter Card Validator. The OG `<meta>` URL is unchanged (`https://agencystate.ai/assets/og-image.png`), so no cache-busting query string was added.
+
+---
+
 ## 2026-04-27 — Deploy workflow clarified; cohort-v1-paused branch deleted; CLAUDE.md updated
 
 **What changed**

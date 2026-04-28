@@ -113,7 +113,7 @@
         /* ---- Section 1: Bio ---- */
 
         .bio-section {
-            padding: 8.5rem 0 4rem;
+            padding: 8.5rem 0 0;
         }
 
         .bio-greeting {
@@ -143,12 +143,13 @@
             font-weight: 300;
             color: var(--text-secondary);
             letter-spacing: 0.02em;
+            margin-bottom: 3rem;
         }
 
         /* ---- Section 2: Current offer (prose, inline link) ---- */
 
         .offer-section {
-            padding: 0 0 1rem;
+            padding: 0;
         }
 
         .offer-prose {
@@ -159,6 +160,7 @@
             color: var(--text);
             max-width: 60ch;
             text-wrap: pretty;
+            margin-bottom: 3rem;
         }
 
         .offer-prose a {
@@ -174,7 +176,7 @@
         /* ---- Section 3: Contact ---- */
 
         .contact-section {
-            padding: 5rem 0 7rem;
+            padding: 0 0 7rem;
         }
 
         .contact-line {
@@ -259,9 +261,11 @@
 
         @media (max-width: 600px) {
             .container { padding: 0 1.25rem; }
-            .bio-section { padding: 6rem 0 2rem; }
-            .offer-section { padding: 0 0 2.5rem; }
-            .contact-section { padding: 3rem 0 4.5rem; }
+            .bio-section { padding: 6rem 0 0; }
+            .offer-section { padding: 0; }
+            .contact-section { padding: 0 0 4.5rem; }
+            .bio-signoff { margin-bottom: 2rem; }
+            .offer-prose { margin-bottom: 2rem; }
             nav .container { height: 56px; }
             .nav-wordmark .nav-type { width: 130px; }
             footer .container { gap: 1rem; }
@@ -293,7 +297,7 @@
         <!-- Section 2: Current offer (single inline-link sentence) -->
         <section class="offer-section">
             <div class="container">
-                <p class="offer-prose reveal">Right now, I&rsquo;m taking on engagements to help teams automate the work that gets in the way of their best work. The <a href="/workflow-automation-sprint" id="homepage-offer-link">Workflow Automation Sprint</a> is a four-week 1:1.</p>
+                <p class="offer-prose reveal">Right now, I&rsquo;m taking on engagements to automate the work that&rsquo;s eating your team&rsquo;s time. The <a href="/workflow-automation-sprint" id="homepage-offer-link">Workflow Automation Sprint</a> is a four-week 1:1.</p>
             </div>
         </section>
 

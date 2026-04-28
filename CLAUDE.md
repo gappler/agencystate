@@ -1,8 +1,8 @@
-# Project Rules — agency-state
+            # Project Rules — agency-state
 
 This is the **public** repo for the Agency State marketing site (agencystate.ai). It is served by GitHub Pages and anything committed here is publicly visible.
 
-Internal content lives in two private companion repos: curriculum, pricing, research, and strategy in [`agency-state-curriculum`](https://github.com/gappler/agency-state-curriculum), and brand + outbound comms in [`agency-state-publishing`](https://github.com/gappler/agency-state-publishing). If you need to read or edit brand rules, session designs, pricing strategy, or internal research, work in the appropriate private repo — not this one.
+Internal content lives in three private companion repos: curriculum, pricing, research, and strategy in [`agency-state-curriculum`](https://github.com/gappler/agency-state-curriculum); brand resources (brand book, brand guidelines, illustrator files) in [`agency-state-practice`](https://github.com/gappler/agency-state-practice); and outbound comms in [`agency-state-publishing`](https://github.com/gappler/agency-state-publishing). If you need to read or edit brand rules, session designs, pricing strategy, or internal research, work in the appropriate private repo — not this one.
 
 ## Current state (April 2026)
 
@@ -16,7 +16,7 @@ Two pages are live: the homepage at `/` (umbrella personal-statement page) and `
 
 ## Brand
 
-Brand decisions are settled by the brand book in `agency-state-publishing/brand/agency-state-brand-book.md`. Read it before writing or editing any copy on this site. Do not restate brand rules here.
+Brand decisions are settled by the brand book in `agency-state-practice/brand/brand-book.md`. The visual system is settled by the brand guidelines in `agency-state-practice/brand/brand-guidelines.md`. Read both before writing or editing copy or styles on this site. Do not restate brand rules here.
 
 ## Strategy
 
@@ -30,7 +30,7 @@ Strategic decisions — audience, offer, format, pricing — are settled by `age
 
 ## Git Discipline
 
-- **This repo is public.** Never commit internal content here. Curriculum, pricing, and research live in `agency-state-curriculum`; brand and outbound drafts live in `agency-state-publishing`.
+- **This repo is public.** Never commit internal content here. Curriculum, pricing, and research live in `agency-state-curriculum`; brand resources live in `agency-state-practice`; outbound drafts live in `agency-state-publishing`.
 - Commit in focused, descriptive units. Don't let unrelated changes pile up in one commit.
 - Write commit messages that explain the *why*, not just the *what*.
 - Don't commit `.DS_Store` or other macOS cruft (already in `.gitignore`).
